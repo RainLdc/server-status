@@ -3,7 +3,7 @@
     <v-row justify="center">
       <img width="70px" src="../assets/heartbeat.png" />
       <v-col cols="12">
-        <v-data-table width="800px" :headers="headers" :items="sites" class="elevation-1">
+        <v-data-table max-width="800px" :headers="headers" :items="sites" class="elevation-1">
           <template v-slot:item.status="{ item }">
             <v-chip :color="getColor(item.status)" dark>{{ item.status }}</v-chip>
           </template>
