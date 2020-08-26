@@ -1,7 +1,7 @@
 <template>
   <div red class="justify-center d-flex">
     <v-row justify="center">
-      <img width="70px" src="../assets/heartbeat.png" />
+      <img width="70px" height="70px" src="../assets/heartbeat.png" />
       <v-col cols="12">
         <v-data-table max-width="800px" :headers="headers" :items="sites" class="elevation-1">
           <template v-slot:item.status="{ item }">
