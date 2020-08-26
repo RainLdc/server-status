@@ -1,6 +1,6 @@
 {
-  "name": "Room Reservation",
-  "short_name": "Room Reservation",
+  "name": "Server Status",
+  "short_name": "Server Status",
   "icons": [
     {
       "src": "/img/icons/heartbeat.png",
