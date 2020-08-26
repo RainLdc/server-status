@@ -1,23 +1,11 @@
 [
   {
     "name": "Romain LE DUC",
-    "url": "romainleduc.com",
-    "port": 80
-  },
-  {
-    "name": "Romain LE DUC",
-    "url": "romainleduc.com",
-    "port": 443
+    "url": "romainleduc.com"
   },
   {
     "name": "AIOps",
-    "url": "aiops.fr",
-    "port": 443
-  },
-  {
-    "name": "AIOps",
-    "url": "aiops.fr",
-    "port": 80
+    "url": "aiops.fr"
   },
   {
     "name": "Room reservation BackEnd",

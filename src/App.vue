@@ -1,16 +1,25 @@
 <template>
-  <div id="app">
-    <HelloWorld/>
-  </div>
+  <v-app>
+    <Menu />
+    <v-main>
+      <Status />
+    </v-main>
+    <Footer/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Status from "./components/Status";
+import Menu from "./components/Menu";
+import Footer from "./components/Footer";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
-    HelloWorld
-  }
-}
+    Status,
+    Menu,
+    Footer
+  },
+};
 </script>

@@ -1,45 +1,33 @@
 <template>
-  <div class="hello">
-    <h1>Etat de servers</h1>
-    <table class="table table-stripped table-hover" id="cont-table">
-      <thead>
-        <tr>
-          <th>No.</th>
-          <th>Name</th>
-          <th>URL</th>
-          <th>Port</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(site, index) in sites" :key="index">
-          <td>{{ index + 1 }}</td>
-          <td>{{ site.name }}</td>
-          <td>
-            <a v-bind:href="getHref(site)" target="_blank">{{ site.url }}</a>
-          </td>
-          <td>{{ site.port }}</td>
-          <td v-if="site.status">
-            <span class="label label-success">LIVE</span>
-          </td>
-          <td v-else>
-            <span class="label label-danger">DOWN</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div red class="justify-center d-flex">
+    <v-row justify="center">
+      <img width="70px" src="../assets/heartbeat.png" />
+      <v-col cols="12">
+        <v-data-table width="800px" :headers="headers" :items="sites" class="elevation-1">
+          <template v-slot:item.status="{ item }">
+            <v-chip :color="getColor(item.status)" dark>{{ item.status }}</v-chip>
+          </template>
+        </v-data-table>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
 import json from "../assets/data.json";
 export default {
-  name: "HelloWorld",
+  name: "Status",
 
   data() {
     return {
       siteDataUrl: json,
       sites: [],
+      headers: [
+        { text: "Name", align: "start", value: "name" },
+        { text: "URL", value: "url" },
+        { text: "Port", value: "port" },
+        { text: "Status", value: "status" },
+      ],
     };
   },
   created: function () {
@@ -56,6 +44,11 @@ export default {
       let self = this;
       self.sites = json;
       self.getStatus();
+    },
+
+    getColor(status) {
+      if (status) return "green";
+      else return "red";
     },
 
     getStatus: function () {
